@@ -23,7 +23,7 @@ body {
 
 .close-alert {
     position: absolute;
-    right: -10px;   
+    right: -10px;
     top: -15px;
     border-radius: 15px;
     width: 31px;
@@ -31,4 +31,15 @@ body {
 
 #spanRequired {
     color: red;
+}
+
+body {
+    background-color: hsl(0, 0%, 95%);
+}
+
+#table-clientes_wrapper {
+    background-color: #FFFF;
+    padding: 1vh;
+    border-radius: .25rem;
+    display: block;
 }
