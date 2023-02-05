@@ -1,0 +1,148 @@
+﻿@model ClienteModel
+@{
+    ViewData["Title"] = "Editar Cliente";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Editar cliente</h1>
+
+</div>
+
+<form asp-asp-controller="Cliente" asp-action="Alterar" method="post">
+    <input type="hidden" asp-for="Id" />
+    <h3>Dados Básicos</h3>
+    <div class="form-group">
+        <label for="nome">Nome</label><span id="spanRequired">*</span>
+        <input type="text" class="form-control" asp-for="Nome" placeholder="Digite o nome do cliente">
+        @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+
+    <div class="form-group">
+        <label for="DataDeNascimento">Data de nascimento</label><span id="spanRequired">*</span>
+        <input type="date" class="form-control" asp-for="DataDeNascimento" placeholder="Digite a data de nascimento do cliente">
+        @Html.ValidationMessageFor(x => x.DataDeNascimento)
+    </div>
+
+    <div class="form-group">
+        <label for="RG">RG</label> <span id="spanRequired">*</span>
+        <input type="number" class="form-control" asp-for="RG" placeholder="Digite o RG do cliente">
+        @Html.ValidationMessageFor(x => x.RG)
+    </div>
+
+    <div class="form-group">
+        <label for="CPF">CPF</label> <span id="spanRequired">*</span>
+        <input type="number" class="form-control" asp-for="CPF" placeholder="Digite o CPF do cliente">
+        @Html.ValidationMessageFor(x => x.CPF)
+    </div>
+
+    <div class="form-group">
+        <label for="celular">Celular</label> <span id="spanRequired">*</span>
+        <input type="tel" class="form-control" asp-for="Celular" placeholder="Digite o celular do cliente">
+        @Html.ValidationMessageFor(x => x.Celular)
+    </div>
+
+    <div class="form-group">
+        <label for="TelefoneResidencial">Telefone Residencial</label>
+        <input type="tel" class="form-control" asp-for="TelefoneResidencial" placeholder="Digite o telefone residencial do cliente">
+    </div>
+
+    <div class="form-group">
+        <label for="TelefoneComercial">Telefone Comercial</label>
+        <input type="tel" class="form-control" asp-for="TelefoneComercial" placeholder="Digite o telefone comercial do cliente">
+    </div>
+
+    <br />
+
+    <h3>Endereço</h3>
+    <h5>Principal</h5>
+    <div class="form-group">
+        <label for="cep">CEP</label><span id="spanRequired">*</span>
+        <input type="number" class="form-control" asp-for="Cep" placeholder="Digite o CEP">
+        @Html.ValidationMessageFor(x => x.Cep)
+    </div>
+
+    <div class="form-group">
+        <label for="rua">Rua</label><span id="spanRequired">*</span>
+        <input type="text" class="form-control" asp-for="Rua" placeholder="Digite a rua">
+        @Html.ValidationMessageFor(x => x.Rua)
+    </div>
+
+    <div class="form-group">
+        <label for="bairro">Bairro</label><span id="spanRequired">*</span>
+        <input type="text" class="form-control" asp-for="Bairro" placeholder="Digite o bairro">
+        @Html.ValidationMessageFor(x => x.Bairro)
+    </div>
+
+    <div class="form-group">
+        <label for="cidade">Cidade</label><span id="spanRequired">*</span>
+        <input type="text" class="form-control" asp-for="Cidade" placeholder="Digite a cidade">
+        @Html.ValidationMessageFor(x => x.Cidade)
+    </div>
+
+    <div class="form-group">
+        <label for="estado">Estado</label><span id="spanRequired">*</span>
+        <input type="text" class="form-control" asp-for="Estado" placeholder="Digite o estado">
+    </div>
+
+    <br />
+    <!--Endereço secundário-->
+    <h5>Alternativo</h5>
+
+    <div class="form-group">
+        <label for="cepSec">CEP</label>
+        <input type="text" class="form-control" asp-for="CepSec" placeholder="Digite o CEP">
+    </div>
+
+    <div class="form-group">
+        <label for="ruaSec">Rua</label>
+        <input type="text" class="form-control" asp-for="RuaSec" placeholder="Digite a rua">
+    </div>
+
+    <div class="form-group">
+        <label for="bairroSec">Bairro</label>
+        <input type="text" class="form-control" asp-for="BairroSec" placeholder="Digite o bairro">
+    </div>
+
+    <div class="form-group">
+        <label for="cidadeSec">Cidade</label>
+        <input type="text" class="form-control" asp-for="CidadeSec" placeholder="Digite a cidade">
+    </div>
+
+    <div class="form-group">
+        <label for="estadoSec">Estado</label>
+        <input type="text" class="form-control" asp-for="EstadoSec" placeholder="Digite o estado">
+    </div>
+
+    <br />
+
+    <h3>Redes sociais</h3>
+    <div class="form-group">
+        <label for="linkedin">Linkedin</label>
+        <input type="url" class="form-control" asp-for="Linkedin" placeholder="Digite o link do Likedin do cliente">
+        @Html.ValidationMessageFor(x => x.Linkedin)
+    </div>
+
+    <div class="form-group">
+        <label for="facebook">Facebook</label>
+        <input type="url" class="form-control" asp-for="Facebook" placeholder="Digite o link do Facebook do cliente">
+        @Html.ValidationMessageFor(x => x.Facebook)
+    </div>
+
+    <div class="form-group">
+        <label for="instagram">Instagram</label>
+        <input type="url" class="form-control" asp-for="Instagram" placeholder="Digite o link do Instagram do cliente">
+        @Html.ValidationMessageFor(x => x.Instagram)
+    </div>
+
+    <div class="form-group">
+        <label for="twitter">Twitter</label>
+        <input type="url" class="form-control" asp-for="Twitter" placeholder="Digite o link do Twitter do cliente">
+        @Html.ValidationMessageFor(x => x.Twitter)
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary w-100">Alterar</button>
+    <a class="btn btn-secondary w-100" asp-controller="Cliente" asp-action="Index" role="button">Voltar</a>
+</form>
