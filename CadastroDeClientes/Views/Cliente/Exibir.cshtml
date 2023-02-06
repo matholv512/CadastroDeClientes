@@ -1,0 +1,78 @@
+﻿@model ClienteModel
+@{
+    ViewData["Title"] = "Informações do Cliente " + @Model.Nome;
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="text-center">
+            <h1 class="card-header" id="TituloInfoCliente">Informações do cliente (@Model.Nome)</h1>
+        </div>
+
+        <div>
+            <h4 class="fw-bold" id="TituloDosDados">Dados Básicos:</h4>
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item">Id: @Model.Id</li>
+            <li class="list-group-item">Nome Completo: @Model.Nome</li>
+            <li class="list-group-item">Data de Nascimento: @Model.DataDeNascimento</li>
+            <li class="list-group-item">RG: @Model.RG</li>
+            <li class="list-group-item">CPF: @Model.CPF</li>
+            @if(@Model.TelefoneResidencial != null)
+            {
+                <li class="list-group-item">Telefone residencial: @Model.TelefoneResidencial</li>
+            }
+            @if (@Model.TelefoneResidencial != null)
+            {
+                <li class="list-group-item">Telefone comercial: @Model.TelefoneComercial</li>
+            }
+        </ul>
+
+        <br />
+
+        <div>
+            <h4 class="fw-bold" id="TituloDosDados">Endereços</h4>
+        </div>
+
+        <p style="font-weight:500;" id="TituloDosDados">Principal:</p>
+        
+        <ul class="list-group">
+            <li class="list-group-item">CEP: @Model.Cep</li>
+            <li class="list-group-item">Rua: @Model.Rua</li>
+            <li class="list-group-item">Bairro: @Model.Bairro</li>
+            <li class="list-group-item">Cidade: @Model.Cidade</li>
+            <li class="list-group-item">Estado: @Model.Estado</li>
+        </ul>
+
+        @if(!String.IsNullOrEmpty(Model.RuaSec + Model.BairroSec + Model.CepSec + Model.EstadoSec + Model.CidadeSec))
+        {
+            <p style="font-weight: 500" id="TituloDosDados">Alternativo:</p>
+            <ul class="list-group">
+                <li class="list-group-item">CEP: @Model.CepSec</li>
+                <li class="list-group-item">Rua: @Model.RuaSec</li>
+                <li class="list-group-item">Bairro: @Model.BairroSec</li>
+                <li class="list-group-item">Cidade: @Model.CidadeSec</li>
+                <li class="list-group-item">Estado: @Model.EstadoSec</li>
+            </ul>
+        }
+
+        <br />
+
+        <div>
+            <h4 class="fw-bold" id="TituloDosDados">Redes sociais</h4>
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item">Linkedin: @Model.Linkedin</li>
+            <li class="list-group-item">Facebook: @Model.Facebook</li>
+            <li class="list-group-item">Instagram: @Model.Instagram</li>
+            <li class="list-group-item">Twitter: @Model.Twitter</li>
+        </ul>
+
+        <div class="card-footer">
+            <button class="btn btn-danger" asp-controller="Cliente" asp-action="Index">Voltar</button>
+            <button type="button" class="btn btn-primary" asp-controller="Cliente" asp-action="Editar">Editar</button>
+        </div>
+    </div>
+</div>

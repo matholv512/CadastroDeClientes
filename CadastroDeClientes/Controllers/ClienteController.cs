@@ -27,6 +27,11 @@ namespace CadastroDeClientes.Controllers
             ClienteModel cliente = _clienteRepositorio.ListarPorId(id);
             return View(cliente);
         }
+        public IActionResult Exibir(int id)
+        {
+            ClienteModel cliente = _clienteRepositorio.ListarPorId(id);
+            return View(cliente);
+        }
         public IActionResult ApagarConfirmacao(int id)
         {
             ClienteModel cliente = _clienteRepositorio.ListarPorId(id);

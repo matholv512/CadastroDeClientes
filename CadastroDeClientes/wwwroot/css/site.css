@@ -43,3 +43,12 @@ body {
     border-radius: .25rem;
     display: block;
 }
+
+#TituloInfoCliente {
+    font-weight: 500;
+}
+
+#TituloDosDados {
+    padding-left: 1vh;
+}
+

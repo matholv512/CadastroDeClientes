@@ -12,7 +12,9 @@ namespace CadastroDeClientes.Repositorio
         }
         public ClienteModel ListarPorId(int id)
         {
+#pragma warning disable CS8603 // Possible null reference return.
             return _context.Clientes.FirstOrDefault(x => x.Id == id);
+#pragma warning restore CS8603 // Possible null reference return.
         }
         public List<ClienteModel> BuscarTodos()
         {
