@@ -4,8 +4,10 @@
 }
 
 <div class="text-center">
-    <h3>Realmente deseja apagar o cliente (@Model.Nome)</h3>
-</div>
 
-<a class="btn btn-primary w-100" role="button" asp-controller="Cliente" asp-action="Index">Cancelar exclusão</a>
-<a class="btn btn-danger w-100" role="button" asp-controller="Cliente" asp-action="Apagar" asp-route-id="@Model.Id">Confirmar exclusão</a> 
+    <div class="card-header">
+        <h3>Realmente deseja apagar o cliente (@Model.Nome)</h3>
+        <a class="btn btn-primary" role="button" asp-controller="Cliente" asp-action="Index">Cancelar exclusão</a>
+        <a class="btn btn-danger" role="button" asp-controller="Cliente" asp-action="Apagar" asp-route-id="@Model.Id">Confirmar exclusão</a>
+    </div>
+</div>

@@ -46,9 +46,10 @@ body {
 
 #TituloInfoCliente {
     font-weight: 500;
+    padding-left: 2vh;
 }
 
 #TituloDosDados {
-    padding-left: 1vh;
+    padding-left: 2vh;
 }
 

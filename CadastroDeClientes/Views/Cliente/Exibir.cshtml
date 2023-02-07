@@ -4,22 +4,26 @@
 }
 
 <div class="container mt-5">
+
     <div class="card">
+
         <div class="text-center">
             <h1 class="card-header" id="TituloInfoCliente">Informações do cliente (@Model.Nome)</h1>
         </div>
 
+        <br />
+
         <div>
-            <h4 class="fw-bold" id="TituloDosDados">Dados Básicos:</h4>
+            <h4 class="fw-normal" id="TituloDosDados">Dados Básicos:</h4>
         </div>
 
         <ul class="list-group">
             <li class="list-group-item">Id: @Model.Id</li>
             <li class="list-group-item">Nome Completo: @Model.Nome</li>
-            <li class="list-group-item">Data de Nascimento: @Model.DataDeNascimento</li>
+            <li class="list-group-item">Data de Nascimento: @Model.DataDeNascimento.ToString().Replace("00:00:00", "")</li>
             <li class="list-group-item">RG: @Model.RG</li>
             <li class="list-group-item">CPF: @Model.CPF</li>
-            @if(@Model.TelefoneResidencial != null)
+            @if (@Model.TelefoneResidencial != null)
             {
                 <li class="list-group-item">Telefone residencial: @Model.TelefoneResidencial</li>
             }
@@ -32,11 +36,11 @@
         <br />
 
         <div>
-            <h4 class="fw-bold" id="TituloDosDados">Endereços</h4>
+            <h4 class="fw-normal" id="TituloDosDados">Endereços</h4>
         </div>
 
-        <p style="font-weight:500;" id="TituloDosDados">Principal:</p>
-        
+        <p style="font-weight: 500" id="TituloDosDados">&lt;Principal&gt;</p>
+
         <ul class="list-group">
             <li class="list-group-item">CEP: @Model.Cep</li>
             <li class="list-group-item">Rua: @Model.Rua</li>
@@ -45,9 +49,10 @@
             <li class="list-group-item">Estado: @Model.Estado</li>
         </ul>
 
-        @if(!String.IsNullOrEmpty(Model.RuaSec + Model.BairroSec + Model.CepSec + Model.EstadoSec + Model.CidadeSec))
+        @if (!String.IsNullOrEmpty(Model.RuaSec + Model.BairroSec + Model.CepSec + Model.EstadoSec + Model.CidadeSec))
         {
-            <p style="font-weight: 500" id="TituloDosDados">Alternativo:</p>
+            <br />
+            <p style="font-weight: 500" id="TituloDosDados">&lt;Alternativo&gt;</p>
             <ul class="list-group">
                 <li class="list-group-item">CEP: @Model.CepSec</li>
                 <li class="list-group-item">Rua: @Model.RuaSec</li>
@@ -60,7 +65,7 @@
         <br />
 
         <div>
-            <h4 class="fw-bold" id="TituloDosDados">Redes sociais</h4>
+            <h4 class="fw-normal" id="TituloDosDados">Redes sociais</h4>
         </div>
 
         <ul class="list-group">
@@ -71,8 +76,9 @@
         </ul>
 
         <div class="card-footer">
-            <button class="btn btn-danger" asp-controller="Cliente" asp-action="Index">Voltar</button>
-            <button type="button" class="btn btn-primary" asp-controller="Cliente" asp-action="Editar">Editar</button>
+            <a role="button" class="btn btn-danger" asp-controller="Cliente" asp-action="Index">Voltar</a>
+            <a role="button" class="btn btn-primary" asp-route-id="@Model.Id" asp-controller="Cliente" asp-action="Editar">Editar</a>
         </div>
     </div>
+
 </div>
